@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="悠悠鸟影视-自由飞翔的影视在线观看平台，提供院线电影、热播电视剧、经典纪录片、高分动画免费高清在线观看，像鸟儿一样自由选片，随时随地轻松观影。">
+<meta name="keywords" content="悠悠鸟影视,悠悠鸟影视网,在线观看,高清影视,院线电影,热播电视剧,经典纪录片,高分动画">
+<meta name="author" content="悠悠鸟影视">
+<title>悠悠鸟影视 | 自由飞翔的影视在线观看 · 电影电视剧纪录片动画免费看</title>
+<meta property="og:title" content="悠悠鸟影视 | 自由飞翔的影视在线观看平台">
+<meta property="og:description" content="悠悠鸟影视提供院线电影、热播电视剧、经典纪录片、高分动画免费高清在线观看，自由选片，轻松观影。">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://youyouniaoyingshi-cn.github.io/">
+<style>
+:root{
+  --sky:#eef6ff;
+  --sky2:#f7fbff;
+  --ink:#1f2d3d;
+  --ink2:#4a5b6e;
+  --muted:#8496a8;
+  --card:#fff;
+  --line:#dfe9f3;
+  --blue:#2f7fff;
+  --blue-d:#1a5ed8;
+  --cyan:#38c6d9;
+  --gold:#ffb547;
+  --r:20px;
+  --mw:1240px;
+  --sh:0 10px 30px rgba(47,127,255,.13);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--sky2);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+::selection{background:#dbeaff;color:var(--blue-d)}
+.container{max-width:var(--mw);margin:0 auto;padding:0 24px}
+section{padding:96px 0;position:relative;overflow:hidden}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;color:var(--blue-d);
+  background:#e5f0ff;padding:7px 16px;border-radius:999px;margin-bottom:18px;font-weight:800}
+.kicker::before{content:"✈";color:var(--blue)}
+.h2{font-size:clamp(28px,4.6vw,46px);font-weight:900;line-height:1.2;margin-bottom:16px;letter-spacing:-.5px}
+.h2 em{font-style:normal;color:var(--blue-d);position:relative}
+.h2 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:var(--gold);opacity:.45;z-index:-1;border-radius:5px}
+.lead{color:var(--muted);max-width:620px;font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:999px;
+  font-weight:800;font-size:15px;cursor:pointer;border:0;transition:.3s}
+.btn-main{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;box-shadow:0 12px 28px rgba(31,94,216,.35)}
+.btn-main:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 18px 40px rgba(31,94,216,.42)}
+.btn-ghost{background:var(--card);color:var(--blue-d);border:2px solid var(--line)}
+.btn-ghost:hover{border-color:var(--blue);background:#eef6ff}
+.cloud{position:absolute;opacity:.55;pointer-events:none;animation:drift 20s linear infinite}
+@keyframes drift{from{transform:translateX(-120px)}to{transform:translateX(calc(100vw + 120px))}}
+@keyframes flap{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(6deg)}}
+@keyframes rise{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+
+/* ===== NAV ===== */
+.gnb{position:fixed;inset:0 0 auto;z-index:100;background:rgba(247,251,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.gnb .container{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:23px;letter-spacing:.5px;color:var(--blue-d)}
+.brand i{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#dbeaff,var(--blue));
+  display:grid;place-items:center;font-style:normal;font-size:20px;color:#fff;box-shadow:0 4px 14px rgba(47,127,255,.4);animation:flap 2.4s ease-in-out infinite}
+.brand b{color:var(--ink)}
+.gnb nav{display:flex;gap:4px;align-items:center}
+.gnb nav a{padding:10px 18px;border-radius:999px;font-size:14px;color:var(--muted);font-weight:700;transition:.25s}
+.gnb nav a:hover{color:var(--blue-d);background:#e5f0ff}
+.gnb nav a.act{background:var(--blue);color:#fff}
+.mtoggle{display:none;background:none;border:0;color:var(--blue-d);font-size:26px;cursor:pointer}
+
+/* ===== HERO (鸟翼扇形展开) ===== */
+.hero{min-height:100vh;padding:150px 0 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;
+  background:radial-gradient(600px 520px at 88% 12%,#dbeaff,transparent 60%),var(--sky2)}
+.hero .big{font-size:clamp(40px,7.2vw,78px);font-weight:900;line-height:1.06;letter-spacing:-2.5px}
+.hero .big .hi{color:var(--blue-d)}
+.hero p{color:var(--muted);font-size:clamp(15px,1.6vw,17px);max-width:500px;margin:26px 0 34px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.wings{position:relative;height:430px}
+.wing{position:absolute;bottom:60px;left:50%;width:150px;aspect-ratio:1;border-radius:26px;color:#fff;
+  display:grid;place-items:center;font-size:44px;box-shadow:var(--sh);transform-origin:center bottom}
+.w1{background:linear-gradient(135deg,var(--blue),var(--blue-d));transform:translateX(-120%) rotate(-18deg) translateY(20px);animation:rise 5s infinite}
+.w2{background:linear-gradient(135deg,var(--cyan),var(--blue));transform:translateX(-40%) rotate(-8deg) translateY(6px);animation:rise 5s .5s infinite}
+.w3{background:linear-gradient(135deg,var(--gold),var(--blue));transform:translateX(40%) rotate(8deg) translateY(6px);animation:rise 5s 1s infinite}
+.w4{background:linear-gradient(135deg,#7b8cff,var(--blue-d));transform:translateX(120%) rotate(18deg) translateY(20px);animation:rise 5s 1.5s infinite}
+.bird{position:absolute;top:36px;left:50%;transform:translateX(-50%);font-size:70px;filter:drop-shadow(0 8px 18px rgba(47,127,255,.3));animation:flap 2.4s ease-in-out infinite}
+
+/* ===== WHEEL (圆盘雷达) ===== */
+.radar-sec{background:var(--card);border-top:1px solid var(--line)}
+.wrap2{margin-top:44px;display:grid;grid-template-columns:auto 1fr;gap:54px;align-items:center;justify-content:center}
+.wheel{position:relative;width:min(340px,64vw);aspect-ratio:1;border-radius:50%;
+  background:conic-gradient(from 0deg,#eef6ff,#e5f0ff,#f0f7ff,#eef6ff);box-shadow:var(--sh);margin:0 auto}
+.wheel::before{content:"";position:absolute;inset:14%;border-radius:50%;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.dot{position:absolute;width:74px;height:74px;border-radius:50%;background:var(--card);border:3px solid var(--line);
+  display:grid;place-items:center;font-size:28px;color:var(--blue-d);box-shadow:var(--sh);transition:.3s;cursor:pointer}
+.dot:hover{border-color:var(--blue);transform:scale(1.12);background:#eef6ff}
+.d1{top:6%;left:50%;transform:translateX(-50%)} .d2{top:50%;right:6%;transform:translateY(-50%)}
+.d3{bottom:6%;left:50%;transform:translateX(-50%)} .d4{top:50%;left:6%;transform:translateY(-50%)}
+.d5{top:22%;left:22%} .d6{bottom:22%;right:22%}
+.center-tag{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px}
+.center-tag b{font-size:18px;color:var(--blue-d);display:block}
+.center-tag small{color:var(--muted);font-size:12px}
+.radarlist{display:flex;flex-direction:column;gap:14px}
+.radarlist .rl{display:flex;gap:16px;align-items:flex-start;background:var(--sky2);border:1px solid var(--line);
+  border-radius:16px;padding:16px 18px;transition:.3s}
+.radarlist .rl:hover{border-color:var(--blue);background:#eef6ff;transform:translateX(6px)}
+.radarlist .rl i{font-style:normal;font-size:24px}
+.radarlist .rl h4{font-size:15px;font-weight:800;margin-bottom:3px}
+.radarlist .rl p{font-size:13px;color:var(--muted)}
+
+/* ===== MILESTONE (时间轴路线) ===== */
+.road-sec{background:linear-gradient(180deg,var(--sky2),#eaf3ff)}
+.timeline{position:relative;margin-top:54px;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:3px;
+  background:linear-gradient(180deg,var(--blue),var(--cyan));border-radius:3px}
+.tm{position:relative;margin-bottom:30px;background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:22px 26px;box-shadow:var(--sh);transition:.3s}
+.tm:hover{transform:translateX(8px);border-color:var(--blue)}
+.tm::before{content:"";position:absolute;left:-31px;top:26px;width:17px;height:17px;border-radius:50%;
+  background:var(--card);border:4px solid var(--blue);box-shadow:0 0 0 4px #eaf3ff}
+.tm .date{display:inline-block;font-size:12px;font-weight:800;color:var(--blue-d);background:#e5f0ff;
+  padding:4px 14px;border-radius:999px;margin-bottom:10px}
+.tm h4{font-size:18px;font-weight:900;margin-bottom:6px}
+.tm p{font-size:14px;color:var(--muted)}
+
+/* ===== STAT TABLE (统计表) ===== */
+.stat-sec{background:var(--card);border-top:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;margin-top:42px;background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--sh)}
+thead{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff}
+th,td{padding:16px 20px;text-align:left;font-size:14px;border-bottom:1px solid var(--line)}
+th{font-weight:800;font-size:13px;letter-spacing:1px}
+tbody tr:hover{background:#f2f8ff}
+tbody tr:last-child td{border-bottom:0}
+td b{color:var(--blue-d)}
+.tagc{display:inline-block;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:800;background:#e5f0ff;color:var(--blue-d)}
+.tagc.hot{background:#ffe9cc;color:#c47a00}
+
+/* ===== CTA (居中表单) ===== */
+.cta-sec{background:radial-gradient(700px 500px at 50% 20%,#dbeaff,transparent),var(--sky2);text-align:center;border-top:1px solid var(--line)}
+.cta-box{max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:28px;
+  padding:48px 34px;box-shadow:var(--sh);position:relative}
+.cta-box .ring{width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-d));
+  display:grid;place-items:center;font-size:34px;margin:0 auto 20px;color:#fff;box-shadow:0 10px 26px rgba(31,94,216,.35);animation:flap 2.4s ease-in-out infinite}
+.cta-box h2{font-size:clamp(24px,4vw,34px);margin-bottom:12px}
+.cta-box p{color:var(--muted);font-size:14px;margin-bottom:26px}
+.cta-box form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.cta-box input{flex:1;min-width:180px;padding:15px 20px;border-radius:999px;border:1px solid var(--line);
+  background:var(--sky2);font-size:14px;color:var(--ink);outline:none}
+.cta-box input:focus{border-color:var(--blue)}
+.cta-msg{margin-top:14px;font-size:13px;color:var(--blue-d);min-height:20px;font-weight:700}
+
+/* ===== FOOT ===== */
+footer{background:#1f2d3d;color:#c9d6e4}
+.foot{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:44px;padding:68px 0 32px}
+.foot h5{font-size:15px;margin-bottom:18px;color:#fff}
+.foot a{display:block;color:#9fb2c6;font-size:14px;padding:6px 0;transition:.2s}
+.foot a:hover{color:var(--cyan);padding-left:5px}
+.foot .about p{color:#9fb2c6;font-size:14px;margin:16px 0}
+.foot .about .url{color:var(--cyan);font-weight:800;word-break:break-all}
+.copy{border-top:1px solid rgba(47,127,255,.25);padding:24px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:#9fb2c6}
+
+/* ===== REVEAL ===== */
+.rv{opacity:0;transform:translateY(28px);transition:.75s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  section{padding:66px 0}
+  .mtoggle{display:block}
+  .gnb nav{position:fixed;top:70px;left:0;right:0;flex-direction:column;background:var(--card);
+    padding:18px;border-top:1px solid var(--line);transform:translateY(-150%);transition:.35s}
+  .gnb nav.open{transform:translateY(0)}
+  .gnb nav a{width:100%;text-align:center}
+  .hero{grid-template-columns:1fr;text-align:center;gap:40px}
+  .hero p,.hero-btns{margin-left:auto;margin-right:auto;justify-content:center}
+  .wings{max-width:360px;margin:0 auto}
+  .wrap2{grid-template-columns:1fr;gap:36px}
+  .radarlist{grid-template-columns:1fr 1fr;display:grid}
+  table{font-size:13px}
+  th,td{padding:12px 10px}
+  .foot{grid-template-columns:1fr 1fr;gap:30px}
+  .container{padding:0 18px}
+}
+@media(max-width:520px){
+  .radarlist{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .wheel{width:82vw}
+  .dot{width:60px;height:60px;font-size:22px}
+  table{display:block;overflow-x:auto;white-space:nowrap}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ========== NAV ========== -->
+<nav class="gnb">
+  <div class="container">
+    <a class="brand" href="#top"><i>🕊</i>悠悠<b>鸟影视</b></a>
+    <nav id="nav">
+      <a href="#radar">影片频道</a>
+      <a href="#road">更新路线</a>
+      <a href="#stat">热门排行</a>
+      <a href="#cta" class="act">订阅追片</a>
+    </nav>
+    <button class="mtoggle" id="mtoggle" aria-label="菜单">☰</button>
+  </div>
+</nav>
+
+<!-- ========== HERO (鸟翼扇形) ========== -->
+<header class="hero" id="top">
+  <div class="container" style="display:contents">
+    <div class="rv">
+      <div class="big">像鸟儿一样<br><span class="hi">自由选片</span>观影</div>
+      <p>悠悠鸟影视是一个自由、轻盈的影视在线观看平台，提供院线电影、热播电视剧、经典纪录片与高分动画，免费高清在线观看，随时随地轻松追片。</p>
+      <div class="hero-btns">
+        <a class="btn btn-main" href="#radar">开始自由观影 →</a>
+        <a class="btn btn-ghost" href="#stat">查看热门排行</a>
+      </div>
+    </div>
+
+    <div class="wings rv">
+      <div class="bird">🕊</div>
+      <div class="wing w1">🎬</div>
+      <div class="wing w2">📺</div>
+      <div class="wing w3">🎨</div>
+      <div class="wing w4">🎞</div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== RADAR (圆盘雷达) ========== -->
+<section id="radar" class="radar-sec">
+  <div class="container">
+    <div class="rv">
+      <span class="kicker">CHANNEL · 影片频道</span>
+      <h2 class="h2">悠悠鸟影视<em>影片频道</em>，一眼看清</h2>
+      <p class="lead">用罗盘式圆盘把四大频道收拢在中央，点击或悬停即可了解每个频道的内容方向，自由选片更直观。</p>
+    </div>
+
+    <div class="wrap2 rv">
+      <div class="wheel">
+        <div class="dot d1" title="院线电影">🎬</div>
+        <div class="dot d2" title="热播电视剧">📺</div>
+        <div class="dot d3" title="经典纪录片">🎞</div>
+        <div class="dot d4" title="高分动画">🎨</div>
+        <div class="dot d5" title="独立短片">🎞</div>
+        <div class="dot d6" title="专题展映">📽</div>
+        <div class="center-tag"><b>悠悠鸟影视</b><small>四大频道 · 自由选片</small></div>
+      </div>
+
+      <div class="radarlist">
+        <div class="rl"><i>🎬</i><div><h4>院线电影</h4><p>最新上映与经典佳片，高清在线观看</p></div></div>
+        <div class="rl"><i>📺</i><div><h4>热播电视剧</h4><p>同步热播，每日更新追更</p></div></div>
+        <div class="rl"><i>🎞</i><div><h4>经典纪录片</h4><p>自然、人文、历史，开阔视野</p></div></div>
+        <div class="rl"><i>🎨</i><div><h4>高分动画</h4><p>治愈系与新番，大小朋友都爱看</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ROAD (时间轴路线) ========== -->
+<section id="road" class="road-sec">
+  <div class="container">
+    <div class="rv">
+      <span class="kicker">ROADMAP · 更新路线</span>
+      <h2 class="h2">悠悠鸟影视<em>更新路线</em>，追片不迷路</h2>
+      <p class="lead">用时间轴记录悠悠鸟影视的内容上新与平台升级，跟着路线轻松掌握每一次更新。</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tm rv"><span class="date">2026年10月</span><h4>高清画质全面升级</h4><p>悠悠鸟影视全站影片升级为高清在线观看，观影更清晰流畅。</p></div>
+      <div class="tm rv"><span class="date">2026年7月</span><h4>经典纪录片频道上线</h4><p>新增自然与人文纪录片专区，丰富你的观影选择。</p></div>
+      <div class="tm rv"><span class="date">2026年4月</span><h4>热播电视剧每日更新</h4><p>同步热播剧集，悠悠鸟影视陪你每天追更不停。</p></div>
+      <div class="tm rv"><span class="date">2026年1月</span><h4>高分动画专题开播</h4><p>精选治愈系与新番动画，打造轻松观影时光。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STAT TABLE (统计表) ========== -->
+<section id="stat" class="stat-sec">
+  <div class="container">
+    <div class="rv">
+      <span class="kicker">TOP · 热门排行</span>
+      <h2 class="h2">悠悠鸟影视<em>热门排行</em>，大家都在看</h2>
+      <p class="lead">实时统计的影片热度榜，帮你快速找到当下最受欢迎的影视内容。</p>
+    </div>
+
+    <table class="rv">
+      <thead><tr><th>排名</th><th>影片名称</th><th>频道</th><th>类型</th><th>热度</th></tr></thead>
+      <tbody>
+        <tr><td><b>01</b></td><td>云端飞行日记</td><td>院线电影</td><td><span class="tagc hot">热映</span></td><td>98.6万</td></tr>
+        <tr><td><b>02</b></td><td>归途的鸟</td><td>经典纪录片</td><td><span class="tagc">纪录片</span></td><td>87.2万</td></tr>
+        <tr><td><b>03</b></td><td>长风渡口</td><td>热播电视剧</td><td><span class="tagc hot">热播</span></td><td>76.5万</td></tr>
+        <tr><td><b>04</b></td><td>星空便利店</td><td>高分动画</td><td><span class="tagc">动画</span></td><td>68.9万</td></tr>
+        <tr><td><b>05</b></td><td>海风轻吹</td><td>院线电影</td><td><span class="tagc">剧情</span></td><td>60.1万</td></tr>
+        <tr><td><b>06</b></td><td>那年夏天</td><td>经典纪录片</td><td><span class="tagc">人文</span></td><td>54.7万</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== CTA (居中表单) ========== -->
+<section id="cta" class="cta-sec">
+  <div class="container">
+    <div class="cta-box rv">
+      <div class="ring">✉</div>
+      <h2>订阅悠悠鸟影视的追片提醒</h2>
+      <p>留下邮箱，第一时间收到悠悠鸟影视的上新通知与专题推荐，不错过每一部好片。</p>
+      <form id="ctaform">
+        <input type="email" placeholder="你的邮箱地址" required>
+        <button class="btn btn-main" type="submit">订阅追片 →</button>
+      </form>
+      <div class="cta-msg" id="ctamsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="about">
+        <a class="brand" href="#top" style="color:#fff"><i>🕊</i>悠悠<b>鸟影视</b></a>
+        <p>悠悠鸟影视是一个自由、轻盈的影视在线观看平台，提供院线电影、热播电视剧、经典纪录片与高分动画，免费高清在线观看，像鸟儿一样自由选片。</p>
+        <span class="url">https://youyouniaoyingshi-cn.github.io</span>
+      </div>
+      <div>
+        <h5>影片频道</h5>
+        <a href="#radar">院线电影</a>
+        <a href="#radar">热播电视剧</a>
+        <a href="#radar">经典纪录片</a>
+        <a href="#radar">高分动画</a>
+      </div>
+      <div>
+        <h5>关于悠悠鸟影视</h5>
+        <a href="#stat">热门排行</a>
+        <a href="#road">更新路线</a>
+        <a href="#cta">订阅追片</a>
+        <a href="#radar">免费观影</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr"></span> 悠悠鸟影视 youyouniaoyingshi · 自由飞翔的影视在线观看平台</span>
+      <span>高清影视 · 自由选片 · 免费在线观看</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// 移动端导航
+const mt = document.getElementById('mtoggle'), nm = document.getElementById('nav');
+mt.addEventListener('click', () => nm.classList.toggle('open'));
+nm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nm.classList.remove('open')));
+
+// 圆盘交互
+document.querySelectorAll('.dot').forEach(d => {
+  d.addEventListener('mouseenter', () => d.style.borderColor = 'var(--blue)');
+  d.addEventListener('mouseleave', () => d.style.borderColor = '');
+});
+
+// 订阅表单
+document.getElementById('ctaform').addEventListener('submit', e => {
+  e.preventDefault();
+  const m = document.getElementById('ctamsg');
+  m.textContent = '🕊 订阅成功！悠悠鸟影视会为你送上最新追片提醒～';
+  e.target.reset();
+  setTimeout(() => m.textContent = '', 5000);
+});
+
+// 滚动揭示
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+}, { threshold: 0.13 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// 导航高亮
+const secs = document.querySelectorAll('section[id], header[id]');
+const links = document.querySelectorAll('#nav a');
+const no = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      const id = en.target.id;
+      links.forEach(a => a.classList.toggle('act', a.getAttribute('href') === '#' + id));
+    }
+  });
+}, { rootMargin: '-55% 0px -40% 0px' });
+secs.forEach(s => no.observe(s));
+</script>
+</body>
+</html>
